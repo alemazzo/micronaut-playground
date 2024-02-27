@@ -1,15 +1,15 @@
 package micronaut.playground.application
 
-import micronaut.playground.application.api.UserApi
+import micronaut.playground.application.api.UserServiceApi
 import micronaut.playground.commons.events.EventPublisher
 import micronaut.playground.commons.events.UserCreated
-import micronaut.playground.domain.entities.User
-import micronaut.playground.domain.entities.UserRepository
+import micronaut.playground.domain.User
+import micronaut.playground.domain.UserRepository
 
 open class UserService(
     private val userRepository: UserRepository,
     private val eventPublisher: EventPublisher,
-): UserApi {
+): UserServiceApi {
 
     override fun registerUser(email: String, password: String): User {
         val user = User(email = email, password = password)

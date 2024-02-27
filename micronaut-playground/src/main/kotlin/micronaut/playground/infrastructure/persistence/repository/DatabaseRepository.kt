@@ -1,13 +1,15 @@
 package micronaut.playground.infrastructure.persistence.repository
 
+import io.micronaut.context.annotation.Primary
 import jakarta.inject.Named
-import micronaut.playground.domain.entities.User
-import micronaut.playground.domain.entities.UserRepository
+import micronaut.playground.domain.User
+import micronaut.playground.domain.UserRepository
+import micronaut.playground.infrastructure.configs.DatabaseConfiguration
 import micronaut.playground.infrastructure.persistence.model.UserEntity
 import micronaut.playground.infrastructure.persistence.model.UserModelRepository
 
 
-@Named("database")
+@Primary
 class UserRepositoryImpl(private val userModelRepository: UserModelRepository) : UserRepository {
 
     override fun findByEmail(email: String): User? {

@@ -1,4 +1,4 @@
-package micronaut.playground.domain.entities
+package micronaut.playground.domain
 
 data class User(
     val email: String,

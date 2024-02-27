@@ -1,8 +1,8 @@
 package micronaut.playground.infrastructure.persistence.repository
 
 import jakarta.inject.Named
-import micronaut.playground.domain.entities.User
-import micronaut.playground.domain.entities.UserRepository
+import micronaut.playground.domain.User
+import micronaut.playground.domain.UserRepository
 
 @Named("inMemory")
 class InMemoryRepository: UserRepository {

@@ -1,4 +1,4 @@
-package micronaut.playground.domain.entities
+package micronaut.playground.domain
 
 interface UserRepository {
     fun findByEmail(email: String): User?

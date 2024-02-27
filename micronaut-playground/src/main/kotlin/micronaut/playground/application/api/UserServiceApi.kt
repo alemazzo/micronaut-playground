@@ -1,8 +1,8 @@
 package micronaut.playground.application.api
 
-import micronaut.playground.domain.entities.User
+import micronaut.playground.domain.User
 
-interface UserApi {
+interface UserServiceApi {
     fun registerUser(email: String, password: String): User
     fun loginUser(email: String, password: String): User?
 }

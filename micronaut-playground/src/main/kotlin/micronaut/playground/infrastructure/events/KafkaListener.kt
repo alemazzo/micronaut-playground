@@ -1,10 +1,12 @@
 package micronaut.playground.infrastructure.events
 
-import io.micronaut.data.annotation.Repository
 import jakarta.inject.Singleton
+import micronaut.playground.application.api.UserEventsApi
 import micronaut.playground.application.UserEventsService
 import micronaut.playground.commons.events.EventPublisher
+import micronaut.playground.commons.events.UserCreated
 
+/**
 @Singleton
 class KafkaEventPublisher(): EventPublisher {
 
@@ -15,16 +17,13 @@ class KafkaEventPublisher(): EventPublisher {
 }
 
 @KafkaListener
-class KafkaListener(val userEventsService: UserEventsService) {
+class KafkaListener(userEventsService: UserEventsService): UserEventsApi {
 
-    @Topic("users")
-    fun onUserCreated(userCreated: UserCreated) {
+    @Topic("user-created")
+    override fun onUserCreated(userCreated: UserCreated) {
         userEventsService.onUserCreated(userCreated)
     }
 
-    @Topic("users")
-    fun onUserDeleted(userDeleted: UserDeleted) {
-        userEventsService.onUserDeleted(userDeleted)
-    }
-
 }
+
+ **/
