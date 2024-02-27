@@ -1,13 +1,13 @@
 package micronaut.playground.infrastructure.persistence.repository
 
-import jakarta.inject.Singleton
+import jakarta.inject.Named
 import micronaut.playground.domain.entities.User
 import micronaut.playground.domain.entities.UserRepository
-import micronaut.playground.infrastructure.persistence.model.UserModel
+import micronaut.playground.infrastructure.persistence.model.UserEntity
 import micronaut.playground.infrastructure.persistence.model.UserModelRepository
 
 
-@Singleton
+@Named("database")
 class UserRepositoryImpl(private val userModelRepository: UserModelRepository) : UserRepository {
 
     override fun findByEmail(email: String): User? {
@@ -17,7 +17,7 @@ class UserRepositoryImpl(private val userModelRepository: UserModelRepository) :
     }
 
     override fun save(user: User): User {
-        val userModel = UserModel(user.email, user.password)
+        val userModel = UserEntity(user.email, user.password)
         return userModelRepository.save(userModel).let { User(it.email, it.password) }
     }
 

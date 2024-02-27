@@ -1,4 +1,4 @@
-package micronaut.playground.application
+package micronaut.playground.application.api
 
 import micronaut.playground.domain.entities.User
 

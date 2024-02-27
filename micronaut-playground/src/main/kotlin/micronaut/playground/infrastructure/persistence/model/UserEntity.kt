@@ -8,7 +8,7 @@ import io.micronaut.data.repository.CrudRepository
 import jakarta.validation.constraints.NotBlank
 
 @MappedEntity
-data class UserModel (
+data class UserEntity (
     @Id
     val email: String,
 
@@ -17,4 +17,6 @@ data class UserModel (
 )
 
 @JdbcRepository(dialect = Dialect.POSTGRES)
-interface UserModelRepository : CrudRepository<UserModel, String>
+interface UserModelRepository : CrudRepository<UserEntity, String> {
+    fun findEmailBetween(email: String, email2: String): List<UserEntity>
+}

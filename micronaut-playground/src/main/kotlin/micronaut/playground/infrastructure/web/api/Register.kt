@@ -1,4 +1,4 @@
-package micronaut.playground.interfaces.api
+package micronaut.playground.infrastructure.web.api
 
 import io.micronaut.serde.annotation.Serdeable
 import jakarta.validation.constraints.NotBlank

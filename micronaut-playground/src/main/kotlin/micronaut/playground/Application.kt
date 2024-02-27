@@ -6,3 +6,15 @@ fun main(args: Array<String>) {
 	run(*args)
 }
 
+// LEVEL -> WHATS -> DEPENDENCIES
+// --------------------------------
+// DOMAIN -> Language:
+// - Entities
+// - Value Objects
+// - Repositories
+// - Factories
+// APPLICATION -> Domain
+// - Services
+// INTERFACES ->
+// - Controller (Indepedent of the framework)
+// INFRASTRUCTURE
