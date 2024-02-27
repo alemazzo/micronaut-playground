@@ -1,4 +1,4 @@
-package micronaut.playground.frameworks.services
+package micronaut.playground.infrastructure.services
 
 import jakarta.inject.Singleton
 import micronaut.playground.application.UserService

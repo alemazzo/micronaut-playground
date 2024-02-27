@@ -1,4 +1,4 @@
-package micronaut.playground.frameworks.web
+package micronaut.playground.infrastructure.web
 
 import io.micronaut.http.annotation.Body
 import io.micronaut.http.annotation.Controller

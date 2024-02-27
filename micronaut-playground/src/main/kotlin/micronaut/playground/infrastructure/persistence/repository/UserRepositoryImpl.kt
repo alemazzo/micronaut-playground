@@ -1,10 +1,10 @@
-package micronaut.playground.frameworks.persistence.repository
+package micronaut.playground.infrastructure.persistence.repository
 
 import jakarta.inject.Singleton
 import micronaut.playground.domain.entities.User
 import micronaut.playground.domain.entities.UserRepository
-import micronaut.playground.frameworks.persistence.model.UserModel
-import micronaut.playground.frameworks.persistence.model.UserModelRepository
+import micronaut.playground.infrastructure.persistence.model.UserModel
+import micronaut.playground.infrastructure.persistence.model.UserModelRepository
 
 
 @Singleton

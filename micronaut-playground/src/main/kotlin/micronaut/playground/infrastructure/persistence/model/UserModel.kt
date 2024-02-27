@@ -1,4 +1,4 @@
-package micronaut.playground.frameworks.persistence.model
+package micronaut.playground.infrastructure.persistence.model
 
 import io.micronaut.data.annotation.Id
 import io.micronaut.data.annotation.MappedEntity
