@@ -1,14 +1,14 @@
 package micronaut.playground.infrastructure.persistence.repository
 
 import io.micronaut.context.annotation.Primary
-import jakarta.inject.Named
+import io.micronaut.context.annotation.Requires
+import jakarta.inject.Singleton
 import micronaut.playground.domain.User
 import micronaut.playground.domain.UserRepository
-import micronaut.playground.infrastructure.configs.DatabaseConfiguration
 import micronaut.playground.infrastructure.persistence.model.UserEntity
 import micronaut.playground.infrastructure.persistence.model.UserModelRepository
 
-
+@Singleton
 @Primary
 class UserRepositoryImpl(private val userModelRepository: UserModelRepository) : UserRepository {
 
