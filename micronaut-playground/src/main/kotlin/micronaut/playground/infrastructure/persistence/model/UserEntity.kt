@@ -2,8 +2,7 @@ package micronaut.playground.infrastructure.persistence.model
 
 import io.micronaut.data.annotation.Id
 import io.micronaut.data.annotation.MappedEntity
-import io.micronaut.data.jdbc.annotation.JdbcRepository
-import io.micronaut.data.model.query.builder.sql.Dialect
+import io.micronaut.data.mongodb.annotation.MongoRepository
 import io.micronaut.data.repository.CrudRepository
 import jakarta.validation.constraints.NotBlank
 
@@ -16,7 +15,6 @@ data class UserEntity (
     val password: String
 )
 
-@JdbcRepository(dialect = Dialect.POSTGRES)
+@MongoRepository
 interface UserModelRepository : CrudRepository<UserEntity, String> {
-    fun findEmailBetween(email: String, email2: String): List<UserEntity>
 }

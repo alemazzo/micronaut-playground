@@ -1,19 +1,14 @@
 package micronaut.playground
 
-import io.micronaut.http.annotation.Body
-import io.micronaut.http.annotation.Post
-import io.micronaut.http.client.annotation.Client
+import io.kotest.core.spec.style.AnnotationSpec
 import io.micronaut.test.extensions.kotest5.annotation.MicronautTest
-import micronaut.playground.application.UserService
-import micronaut.playground.infrastructure.web.api.LoginRequest
-import micronaut.playground.infrastructure.web.api.LoginResponse
-import micronaut.playground.infrastructure.web.api.RegisterRequest
-import micronaut.playground.infrastructure.web.api.RegisterResponse
+import micronaut.playground.application.api.UserServiceApi
 
 @MicronautTest
-class UserControllerTest {
+class UserControllerTest(private val userServiceApi: UserServiceApi): AnnotationSpec() {
 
-    fun test(userService: UserService) {
+    @Test
+    fun test() {
 
     }
 

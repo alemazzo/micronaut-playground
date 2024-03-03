@@ -17,33 +17,20 @@ repositories {
 }
 
 dependencies {
-
-    annotationProcessor("io.micronaut.data:micronaut-data-processor")
-
+    ksp("io.micronaut.data:micronaut-data-document-processor")
     ksp("io.micronaut:micronaut-http-validation")
-    ksp("io.micronaut.data:micronaut-data-processor")
     ksp("io.micronaut.serde:micronaut-serde-processor")
-    ksp("io.micronaut.validation:micronaut-validation-processor")
+
+    implementation("io.micronaut.data:micronaut-data-mongodb")
+    implementation("io.micronaut.kotlin:micronaut-kotlin-runtime")
+    implementation("io.micronaut.serde:micronaut-serde-jackson")
     implementation("org.jetbrains.kotlin:kotlin-reflect:${kotlinVersion}")
     implementation("org.jetbrains.kotlin:kotlin-stdlib-jdk8:${kotlinVersion}")
-    implementation("io.micronaut.kotlin:micronaut-kotlin-runtime")
-
-
-    // Validation
-    implementation("io.micronaut.validation:micronaut-validation")
-    implementation("jakarta.validation:jakarta.validation-api")
-    implementation("io.micronaut.serde:micronaut-serde-jackson")
 
     compileOnly("io.micronaut:micronaut-http-client")
-
     runtimeOnly("ch.qos.logback:logback-classic")
-    runtimeOnly("mysql:mysql-connector-java")
-    runtimeOnly("org.flywaydb:flyway-mysql")
-    implementation("io.micronaut.flyway:micronaut-flyway")
-    implementation("io.micronaut.sql:micronaut-jdbc-hikari")
-    implementation("io.micronaut.data:micronaut-data-jdbc")
-
-
+    runtimeOnly("com.fasterxml.jackson.module:jackson-module-kotlin")
+    runtimeOnly("org.mongodb:mongodb-driver-sync")
     testImplementation("io.micronaut:micronaut-http-client")
 }
 
