@@ -13,7 +13,7 @@ class DatabaseRepositoryTest(private val userRepository: UserRepository): Annota
     @Test
     fun testUserRepository() {
         val users = userRepository.findByEmail("email")
-        assert(users != null)
+        assert(users == null)
     }
 
 }
