@@ -21,17 +21,20 @@ dependencies {
     ksp("io.micronaut:micronaut-http-validation")
     ksp("io.micronaut.serde:micronaut-serde-processor")
 
+    // Mongo
     implementation("io.micronaut.data:micronaut-data-mongodb")
+    runtimeOnly("org.mongodb:mongodb-driver-sync")
+
     implementation("io.micronaut.kotlin:micronaut-kotlin-runtime")
     implementation("io.micronaut.serde:micronaut-serde-jackson")
     implementation("org.jetbrains.kotlin:kotlin-reflect:${kotlinVersion}")
     implementation("org.jetbrains.kotlin:kotlin-stdlib-jdk8:${kotlinVersion}")
 
     compileOnly("io.micronaut:micronaut-http-client")
+    testImplementation("io.micronaut:micronaut-http-client")
+
     runtimeOnly("ch.qos.logback:logback-classic")
     runtimeOnly("com.fasterxml.jackson.module:jackson-module-kotlin")
-    runtimeOnly("org.mongodb:mongodb-driver-sync")
-    testImplementation("io.micronaut:micronaut-http-client")
 }
 
 
